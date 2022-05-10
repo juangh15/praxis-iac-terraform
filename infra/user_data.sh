@@ -9,4 +9,4 @@ sudo usermod -aG docker ubuntu
 sudo newgrp docker
 
 ## Run pacman
-docker run -p -d nginxdemos/hello
+docker run -p 8600:80 -d golucky5/pacman
