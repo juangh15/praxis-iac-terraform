@@ -3,7 +3,7 @@
 #######################################################
 
 variable "aws_region" {
-  type = string
+  type        = string
   description = "AWS default region (where to deploy your resources)"
 }
 
@@ -12,32 +12,32 @@ variable "aws_region" {
 #######################################################
 
 variable "instance_type" {
-  type = string
+  type        = string
   description = "EC2 instance type"
 }
 
 variable "ec2_tags" {
-    description = "EC2 resource tags"
-    type = map(string)
+  description = "EC2 resource tags"
+  type        = map(string)
 }
 
 variable "ami_id" {
-  type = string
+  type        = string
   description = "EC2 AMI ID"
 }
 
 variable "subnet_id" {
-  type = string
+  type        = string
   description = "Subnet to deploy your resources"
 }
 
 variable "public_ip" {
-  type = bool
+  type        = bool
   description = "Do you need public ip (true->yes,false->no)"
 }
 
 variable "key_pair_name" {
-  type  = string
+  type        = string
   description = "Key pair name"
 }
 
@@ -46,21 +46,21 @@ variable "key_pair_name" {
 ##############################################
 
 variable "sg_name" {
-  type = string
+  type        = string
   description = "Security group name"
 }
 
 variable "sg_description" {
-  type = string
+  type        = string
   description = "Security group description"
 }
 
 variable "vpc_id" {
-  type = string
+  type        = string
   description = "VPC ID"
 }
 
 variable "sg_tags" {
-    description = "SG resource tags"
-    type = map(string) 
+  description = "SG resource tags"
+  type        = map(string)
 }

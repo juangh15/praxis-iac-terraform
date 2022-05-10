@@ -9,9 +9,9 @@ module "deploy_ec2" {
 
   subnet_id = "subnet-04e972f3a706c00e8"
   public_ip = true
-  
-  sg_name = "Mario-demo-terraform-sg"
+
+  sg_name        = "Mario-demo-terraform-sg"
   sg_description = "Allow http over port 8080"
-  vpc_id = "vpc-031420f7c99b1a0bd"
-  sg_tags = { Name = "Mario-demo-terraform-sg" }
+  vpc_id         = "vpc-031420f7c99b1a0bd"
+  sg_tags        = { Name = "Mario-demo-terraform-sg" }
 }
