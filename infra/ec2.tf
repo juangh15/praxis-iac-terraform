@@ -6,5 +6,5 @@ resource "aws_instance" "ec2_instance" {
   associate_public_ip_address = var.public_ip
   security_groups             = [aws_security_group.ec2_public_security_group.id]
   key_name                    = var.key_pair_name
-  user_data                   = "${file("../infra/user_data.sh")}" #context where is executed
+  user_data                   = var.user_data #context where is executed
 }

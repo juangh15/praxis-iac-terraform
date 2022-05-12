@@ -41,6 +41,11 @@ variable "key_pair_name" {
   description = "Key pair name"
 }
 
+variable "user_data" {
+  type = string
+  description = "user data path"
+}
+
 ##############################################
 # Security group variables
 ##############################################
