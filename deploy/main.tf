@@ -6,7 +6,7 @@ module "deploy_ec2" {
   ec2_tags      = { Name = "ec2_test_terraform" }
   ami_id        = "ami-005de95e8ff495156"
   key_pair_name = "key-pair-demo-terraform"
-  user_data = "${file("../infra/user_data.sh")}"
+  user_data     = file("../infra/user_data.sh")
 
   subnet_id = "subnet-04e972f3a706c00e8"
   public_ip = true
