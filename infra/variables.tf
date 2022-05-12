@@ -42,7 +42,7 @@ variable "key_pair_name" {
 }
 
 variable "user_data" {
-  type = string
+  type        = string
   description = "user data path"
 }
 
