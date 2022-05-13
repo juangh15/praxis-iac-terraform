@@ -12,7 +12,7 @@ module "deploy_ec2" {
   public_ip = true
 
   sg_name        = "Pacman-demo-terraform-sg"
-  sg_description = "Allow http over port 8080"
+  sg_description = "Allow http over port 80 and ssh over port 22"
   vpc_id         = "vpc-031420f7c99b1a0bd"
   sg_tags        = { Name = "Pacman-demo-terraform-sg" }
 }
