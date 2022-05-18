@@ -1,3 +1,4 @@
+# Creating EC2 Intance
 resource "aws_instance" "ec2_instance" {
   ami                         = var.ami_id #ami-005de95e8ff495156
   instance_type               = var.instance_type

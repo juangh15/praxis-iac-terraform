@@ -17,8 +17,8 @@ variable "instance_type" {
 }
 
 variable "ec2_tags" {
-  description = "EC2 resource tags"
   type        = map(string)
+  description = "EC2 resource tags"
 }
 
 variable "ami_id" {
@@ -66,6 +66,68 @@ variable "vpc_id" {
 }
 
 variable "sg_tags" {
-  description = "SG resource tags"
   type        = map(string)
+  description = "SG resource tags"
 }
+
+##############################################
+# Elastic IP variables
+##############################################
+
+variable "eip_vpc" {
+  type        = bool
+  description = "Do you need VPC on Elastic IP creation (true->yes,false->no)"
+}
+
+variable "eip_tags" {
+  type        = map(string)
+  description = "Elastic IP resource tags"
+}
+
+##############################################
+# RDS variables
+##############################################
+
+variable "rds_tags" {
+  type        = map(string)
+  description = "RDS database resource tags"
+}
+
+variable "rds_allocated_storage" {
+  type        = number
+  description = "RDS database storage in gigabytes"
+}
+variable "rds_engine" {
+  type        = string
+  description = "RDS database engine"
+}
+
+variable "rds_engine_version" {
+  type        = string
+  description = "RDS database engine version"
+}
+
+variable "rds_instance_class" {
+  type        = string
+  description = "RDS database instance type"
+}
+
+variable "rds_name"{
+  type        = string
+  description = "Name for the RDS database"
+}
+
+variable "rds_username"{
+  type        = string
+  description = "Username for connect to the RDS database"
+}
+
+variable "rds_password"{
+  type        = string
+  description = "Password for connect to the RDS database"
+} 
+
+variable "rds_port"{
+  type        = number
+  description = "Port for connect to the RDS database"
+} 
