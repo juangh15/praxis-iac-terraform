@@ -19,13 +19,21 @@ module "deploy_ec2_and_rds" {
   eip_vpc  = true
   eip_tags = { Name = "group3-eip" }
 
-  rds_allocated_storage = 1
-  rds_engine            = "postgres"
-  rds_engine_version    = "14.1"
-  rds_instance_class    = "db.t3.micro"
-  rds_name              = "group3-rds"
-  rds_username          = "postgres"
-  rds_password          = "secret"
-  rds_tags              = { Name = "group3-rds" }
-  rds_port              = 5432
+  db_subnet_name = "group3-db_subnet_group"
+  db_subnet_ids  = ["subnet-04e972f3a706c00e8", "subnet-0ee2351fb4338f1c7"]
+  db_subnet_tags = { Name = "group3-db_subnet_group" }
+
+  rds_identifier          = "group3-rds"
+  rds_allocated_storage   = 20
+  rds_engine              = "postgres"
+  rds_engine_version      = "14.1"
+  rds_instance_class      = "db.t3.micro"
+  rds_name                = "group3rds"
+  rds_username            = "postgres"
+  rds_password            = "group3secret"
+  rds_tags                = { Name = "group3-rds" }
+  rds_port                = 5432
+  rds_skip_final_snapshot = true
+
+
 }

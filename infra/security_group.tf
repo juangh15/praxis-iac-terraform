@@ -22,11 +22,11 @@ resource "aws_security_group" "ec2_public_security_group" {
     from_port   = 22 # SSH Port
     protocol    = "TCP"
     to_port     = 22
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["190.70.20.93/32"] # Host IP
   }
 
   egress {
-    from_port   = 0 # Any Outside Port
+    from_port   = 0    # Any Outside Port
     protocol    = "-1" # Open all out rule
     to_port     = 0
     cidr_blocks = ["0.0.0.0/0"]
