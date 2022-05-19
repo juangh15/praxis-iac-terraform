@@ -22,10 +22,10 @@ pipeline{
         }
         stage('Run Containers'){
             steps{
-                withCredentials([string(credentialsId: 'POSTGRES_IP', variable: 'POSTGRES_IP'),string(credentialsId: 'API_IP', variable: 'API_IP')]) {
+                withCredentials([string(credentialsId: 'POSTGRES_IP', variable: 'POSTGRES_IP'),string(credentialsId: 'IP_API', variable: 'IP_API')]) {
                     sh '''
                       docker run --name api-container --env POSTGRES_IP=$POSTGRES_IP --env POSTGRES_PORT=5432 --env POSTGRES_USER=postgres --env POSTGRES_PASSWORD=group3secret -p 8081:8080 -d juangh15/gildedrose-api
-                      docker run --name front-container --env API_IP=$API_IP --env API_PORT=8081 -p 4200:4200 -d juangh15/gildedfront
+                      docker run --name front-container --env API_IP=$IP_API --env API_PORT=8081 -p 4200:4200 -d juangh15/gildedfront
                     '''
                 }
                 
