@@ -19,6 +19,13 @@ resource "aws_security_group" "ec2_public_security_group" {
   }
 
   ingress {
+    from_port   = 5432 # Postgres Port
+    protocol    = "TCP"
+    to_port     = 5432
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
     from_port   = 22 # SSH Port
     protocol    = "TCP"
     to_port     = 22
