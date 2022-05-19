@@ -12,6 +12,13 @@ resource "aws_security_group" "ec2_public_security_group" {
   }
 
   ingress {
+    from_port   = 8081 # Gildedrose API Port
+    protocol    = "TCP"
+    to_port     = 8081
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
     from_port   = 4200 # Gildedrose Frontend Port
     protocol    = "TCP"
     to_port     = 4200
@@ -29,7 +36,7 @@ resource "aws_security_group" "ec2_public_security_group" {
     from_port   = 22 # SSH Port
     protocol    = "TCP"
     to_port     = 22
-    cidr_blocks = ["190.70.20.93/32"] # Host IP
+    cidr_blocks = ["190.70.20.93/32", "181.130.35.112/32"] # Host IP from group members
   }
 
   egress {
