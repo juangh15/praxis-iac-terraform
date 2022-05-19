@@ -34,6 +34,6 @@ module "deploy_ec2_and_rds" {
   rds_tags                = { Name = "group3-rds" }
   rds_port                = 5432
   rds_skip_final_snapshot = true
-
+  rds_public_access       = true
 
 }

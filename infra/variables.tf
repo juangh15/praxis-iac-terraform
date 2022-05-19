@@ -142,6 +142,11 @@ variable "rds_skip_final_snapshot" {
   description = "Do you want to skip the snapshot creation step at the destroy of the database? (true->yes,false->no)"
 }
 
+variable "rds_public_access" {
+  type        = bool
+  description = "Do you want to access the DB from public domains? (true->yes,false->no)"
+}
+
 ##############################################
 # RDS variables
 ##############################################
